@@ -26,11 +26,11 @@ h2. HowToUse
 * Configure this Layout as you would normally in log4j with the classname org.elasticflume.log4j.JSONLayout
 * If you use Log4j's MDC (and really you should!) then add a parameter block to configure
  the set of MDC keys you wish to export in this layout (CSV format for the keys)
-<pre>
+@
  ...
  <param name="MdcsToUse" value="UserId,ProjectId,RequestId" />
  ...
-</pre>
+@
 
 TODO
 ====
