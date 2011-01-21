@@ -1,0 +1,35 @@
+json-log4j-layout
+=================
+
+I started this project because I needed a fast way to export Log4j events into JSON
+as part of my elasticflume project (https://github.com/tallpsmith/elasticflume).
+
+I was a bit surprised to not easily Google an existing one, so if you do know of one
+that's awesome, by all means let me know..
+
+I needed this one to be fast, and I believe Jackson is a very fast JSON renderer.
+
+HowToBuild
+==========
+
+This project uses mvn, just type:
+
+   mvn package
+
+and inside the "target" directory will be the JAR.
+
+HowToUse
+========
+
+* Configure this Layout as you would normally in log4j with the classname org.elasticflume.log4j.JSONLayout
+* If you use Log4j's MDC (and really you should!) then add a parameter block to configure
+ the set of MDC keys you wish to export in this layout (CSV format for the keys)
+ ...
+ <param name="MdcsToUse" value="UserId,ProjectId,RequestId" />
+ ...
+
+TODO
+====
+
+* Currently does NOT export locationInformation
+* I have not yet exported this Maven project to the OSS Sonatype Release repository for easy dependency Management for people
